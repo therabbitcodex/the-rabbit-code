@@ -463,6 +463,27 @@ section { position: relative; }
     border-color: var(--border-strong);
     box-shadow: 0 20px 46px rgba(74, 56, 38, .12);
 }
+.block-card > * { position: relative; z-index: 1; }
+.block-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: .18;
+    filter: sepia(.3) saturate(.9) contrast(1.02);
+    mix-blend-mode: multiply;
+    transition: opacity .4s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+.block-card:hover::after { opacity: .28; }
+.bc-1::after { background-image: linear-gradient(180deg, rgba(248,245,239,.55), rgba(241,235,224,.25)), url('../img/bloco-1.png'); }
+.bc-2::after { background-image: linear-gradient(180deg, rgba(248,245,239,.55), rgba(241,235,224,.25)), url('../img/bloco-2.png'); }
+.bc-3::after { background-image: linear-gradient(180deg, rgba(248,245,239,.55), rgba(241,235,224,.25)), url('../img/bloco-3.png'); }
+.bc-4::after { background-image: linear-gradient(180deg, rgba(248,245,239,.55), rgba(241,235,224,.25)), url('../img/bloco-4.png'); }
+.bc-5::after { background-image: linear-gradient(180deg, rgba(248,245,239,.55), rgba(241,235,224,.25)), url('../img/bloco-5.png'); }
+.bc-6::after { background-image: linear-gradient(180deg, rgba(248,245,239,.55), rgba(241,235,224,.25)), url('../img/bloco-6.png'); }
 .block-num {
     font-family: var(--font-mono);
     font-size: .72rem;
