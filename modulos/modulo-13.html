@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 13 — Métricas e Google Analytics · THE RABBIT CODE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Work+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="reading-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#8a6a2c,#c9a55e);z-index:2000;"></div>
+
+<header class="navbar">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo"><span class="logo-badge"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><ellipse cx="25" cy="27" rx="9.5" ry="23" transform="rotate(-12 25 27)" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="41" cy="27" rx="9.5" ry="23" transform="rotate(12 41 27)" fill="none" stroke="currentColor" stroke-width="3"/></svg></span><span class="logo-text">THE RABBIT <b>CODE</b></span></a>
+        <ul class="nav-links">
+            <li><a href="../index.html#curso">O Curso</a></li>
+            <li><a href="../index.html#modulos">Módulos</a></li>
+            <li><a href="../index.html#contato" class="btn btn-primary">Contato</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<main class="module-page">
+    <div class="container">
+
+        <nav class="breadcrumb"><a href="../index.html">Início</a> / Bloco 02 — Marketing Digital / <span>Módulo 13</span></nav>
+
+        <div class="module-hero">
+            <span class="kicker">Bloco 02 · Marketing Digital</span>
+            <h1>Métricas<br><span class="serif-accent grad-text">e Google Analytics</span></h1>
+            <p class="lead">O que não é medido não melhora. Mas medir tudo também é perder tempo. Aqui você aprende a olhar os números certos — e a usar o Google Analytics 4 sem se perder.</p>
+            <div class="module-meta">
+                <span>Tempo: <b>~60 min</b></span>
+                <span>Nível: <b>Intermediário</b></span>
+                <span>Exercício: <b>Sim</b></span>
+            </div>
+        </div>
+
+        <div class="objectives">
+            <h3>Ao final deste módulo você será capaz de</h3>
+            <ul>
+                <li>Separar métricas de vaidade de métricas de decisão.</li>
+                <li>Calcular os KPIs centrais: taxa de conversão, CAC, LTV e ROAS.</li>
+                <li>Navegar pelo GA4 e interpretar seus relatórios essenciais.</li>
+                <li>Criar links rastreados com UTMs para saber de onde vem cada resultado.</li>
+            </ul>
+        </div>
+
+        <article class="content">
+            <h2>1. Vaidade x decisão</h2>
+            <p><strong>Métrica de vaidade</strong> enfeita relatório e não paga conta: curtidas genéricas, seguidores soltos, impressões sem contexto. <strong>Métrica de decisão</strong> muda comportamento na semana seguinte: cliques no link, conversas iniciadas, vendas atribuídas, custo por resultado.</p>
+            <p>Teste rápido: se esse número dobrar amanhã, o negócio ganha dinheiro? Se você hesitou, é vaidade.</p>
+
+            <h2>2. Os KPIs que todo gestor precisa dominar</h2>
+            <table>
+                <tr><th>KPI</th><th>Fórmula</th><th>Interpretação</th></tr>
+                <tr><td><strong>Taxa de conversão</strong></td><td>conversões ÷ visitantes × 100</td><td>Eficiência da página/oferta</td></tr>
+                <tr><td><strong>CAC</strong> (custo de aquisição)</td><td>investimento total ÷ novos clientes</td><td>Quanto custa conquistar 1 cliente</td></tr>
+                <tr><td><strong>LTV</strong> (valor do ciclo)</td><td>ticket médio × frequência × tempo de retenção</td><td>Quanto o cliente vale ao longo do relacionamento</td></tr>
+                <tr><td><strong>ROAS</strong></td><td>receita gerada ÷ gasto com anúncio</td><td>Retorno direto da mídia paga</td></tr>
+                <tr><td><strong>Taxa de engajamento</strong></td><td>(interações ÷ alcance) × 100</td><td>Qualidade da relação com audiência</td></tr>
+            </table>
+            <div class="callout">
+                <span class="callout-icon"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 21c4-3.5 7-7 7-11a7 7 0 1 0-14 0c0 4 3 7.5 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+                <div><p class="callout-title">Regra de ouro</p><p>LTV deve ser bem maior que CAC (referência mínima: 3x). Se custa R$ 100 conquistar um cliente que vale R$ 120, o crescimento está se afogando devagar.</p></div>
+            </div>
+
+            <h2>3. Google Analytics 4 sem sustos</h2>
+            <p>O <strong>GA4</strong> é o painel oficial de comportamento do seu site. Instala-se colando uma tag no site (ou via plugin/Google Tag Manager). Os pontos de partida:</p>
+            <ul>
+                <li><strong>Relatórios de aquisição</strong> — de onde vem o tráfego (orgânico, social, pago, direto);</li>
+                <li><strong>Relatórios de engajamento</strong> — páginas mais vistas, tempo médio, eventos;</li>
+                <li><strong>Eventos</strong> — no GA4 tudo é evento: clique, rolagem, envio de formulário. Marcar eventos-chave como "conversão" é o primeiro passo pós-instalação;</li>
+                <li><strong>Públicos em tempo real</strong> — quantas pessoas estão no site agora e de onde vieram.</li>
+            </ul>
+            <p>Roteiro de primeira análise semanal (15 min): tráfego total × período anterior → canais que cresceram/caíram → página com mais saídas → conversões do período. Quatro olhadas, decisões concretas.</p>
+
+            <h2>4. UTM: o crachá dos links</h2>
+            <p>UTM são parâmetros adicionados ao final da URL para identificar a origem dentro do Analytics:</p>
+            <p style="font-family:monospace;font-size:.85rem;background:var(--bg-2);padding:14px 18px;border-radius:10px;">seusite.com?utm_source=instagram&utm_medium=social&utm_campaign=janeiro25</p>
+            <ul>
+                <li><strong>source</strong> — onde está publicado (instagram, google, newsletter);</li>
+                <li><strong>medium</strong> — tipo de mídia (social, cpc, email);</li>
+                <li><strong>campaign</strong> — nome da campanha/promoção.</li>
+            </ul>
+            <p>Padronize nomes em minúsculas desde o início ("janeiro25", nunca "Janeiro 2025" num link e "JAN25" noutro) ou os relatórios virarão sopa de letrinhas.</p>
+        </article>
+
+        <article class="content">
+            <div class="exercise">
+                <span class="exercise-label">Exercício prático</span>
+                <h3>Mini dashboard do negócio-fantasma</h3>
+                <ol>
+                    <li>Invente dados plausíveis e calcule: <strong>CAC, LTV e ROAS</strong> de uma campanha de R$ 900 que trouxe 12 clientes com ticket de R$ 110/mês, ficando 8 meses.</li>
+                    <li>O LTV/CAC passou de 3x? A campanha merece escalar? Justifique em 3 linhas.</li>
+                    <li>Crie <strong>2 links com UTM</strong>: um para story do Instagram anunciando a oferta, outro para post no feed. Escreva as URLs completas.</li>
+                    <li>Bônus real: instale o GA4 em qualquer site próprio (ou do projeto) e marque o clique do WhatsApp como evento de conversão.</li>
+                </ol>
+            </div>
+
+            <h2>Checklist do módulo</h2>
+            <ul class="checklist">
+                <li><label><input type="checkbox" data-item="1"> Sei separar métrica de vaidade de métrica de decisão</label></li>
+                <li><label><input type="checkbox" data-item="2"> Calculo CAC, LTV e ROAS sem consultar fórmula</label></li>
+                <li><label><input type="checkbox" data-item="3"> Navego pelos relatórios básicos do GA4</label></li>
+                <li><label><input type="checkbox" data-item="4"> Montei URLs rastreadas com padrão consistente de UTM</label></li>
+            </ul>
+
+            <h2>Materiais complementares</h2>
+            <div class="resources">
+                <a class="resource-item" href="https://analytics.google.com/" target="_blank" rel="noopener"><span>Google Analytics 4 — criar sua conta gratuita</span><em>Ferramenta</em></a>
+                <a class="resource-item" href="https://skillshop.docebosaas.com/pages/16/google-analytics-4" target="_blank" rel="noopener"><span>Certificação gratuita do Google Analytics (Skillshop)</span><em>Curso</em></a>
+                <div class="resource-item"><span>Template de dashboard mensal para clientes (pasta de materiais)</span><em>PDF</em></div>
+            </div>
+
+            <nav class="module-nav">
+                <a href="modulo-12.html"><span class="dir">← Anterior</span><span class="title">Módulo 12 · Omnichannel e Trade</span></a>
+                <a class="next" href="modulo-14.html"><span class="dir">Próximo →</span><span class="title">Módulo 14 · Planejamento de Social Media</span></a>
+            </nav>
+        </article>
+    </div>
+</main>
+
+<script src="../js/main.js"></script>
+<script src="../js/chat.js"></script>
+</body>
+</html>

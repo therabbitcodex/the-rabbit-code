@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 22 — Pixel e Estrutura de Conta · THE RABBIT CODE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Work+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="reading-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#8a6a2c,#c9a55e);z-index:2000;"></div>
+
+<header class="navbar">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo"><span class="logo-badge"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><ellipse cx="25" cy="27" rx="9.5" ry="23" transform="rotate(-12 25 27)" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="41" cy="27" rx="9.5" ry="23" transform="rotate(12 41 27)" fill="none" stroke="currentColor" stroke-width="3"/></svg></span><span class="logo-text">THE RABBIT <b>CODE</b></span></a>
+        <ul class="nav-links">
+            <li><a href="../index.html#curso">O Curso</a></li>
+            <li><a href="../index.html#modulos">Módulos</a></li>
+            <li><a href="../index.html#contato" class="btn btn-primary">Contato</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<main class="module-page">
+    <div class="container">
+
+        <nav class="breadcrumb"><a href="../index.html">Início</a> / Bloco 04 — Tráfego Pago / <span>Módulo 22</span></nav>
+
+        <div class="module-hero">
+            <span class="kicker">Bloco 04 · Tráfego Pago</span>
+            <h1>Pixel<br><span class="serif-accent grad-text">e Estrutura de Conta</span></h1>
+            <p class="lead">O pixel é o sistema nervoso da sua operação: sem ele, a plataforma não sabe quem comprou, quem quase comprou e para quem otimizar. Vamos instalar, testar e organizar tudo.</p>
+            <div class="module-meta">
+                <span>Tempo: <b>~55 min</b></span>
+                <span>Nível: <b>Intermediário</b></span>
+                <span>Exercício: <b>Sim</b></span>
+            </div>
+        </div>
+
+        <div class="objectives">
+            <h3>Ao final deste módulo você será capaz de</h3>
+            <ul>
+                <li>Entender o que é o pixel e por que ele decide resultados.</li>
+                <li>Instalar e validar rastreamento em site ou página.</li>
+                <li>Estruturar BM, conta de anúncio e pixel de forma profissional.</li>
+                <li>Criar públicos personalizados a partir de eventos.</li>
+            </ul>
+        </div>
+
+        <article class="content">
+            <h2>1. Pixel: o olho da máquina</h2>
+            <p>O pixel (Meta Pixel / Tag do Google) é um código no seu site que reporta eventos: visita, clique no WhatsApp, envio de formulário, compra. Com esses dados, a plataforma:</p>
+            <ul>
+                <li><strong>Otimiza</strong> — entrega anúncios a quem se parece com quem converte;</li>
+                <li><strong>Aprende</strong> — cada conversão ensina o algoritmo;</li>
+                <li><strong>Mede</strong> — mostra qual campanha gerou resultado real;</li>
+                <li><strong>Remarketa</strong> — permite anunciar só para quem visitou (módulo 28).</li>
+            </ul>
+            <p>Sem pixel, você roda campanha vendada: paga, mas não ensina nem mede direito.</p>
+
+            <h2>2. Instalação na prática</h2>
+            <ol>
+                <li>No Gerenciador de Eventos → conectar dados → criar pixel;</li>
+                <li><strong>Site próprio:</strong> colar o código base no &lt;head&gt; de todas as páginas (ou via Google Tag Manager);</li>
+                <li><strong>Landing page em ferramenta:</strong> colar apenas o ID do pixel no campo integrado;</li>
+                <li><strong>Objetivo WhatsApp:</strong> criar evento personalizado de "clique no botão do WhatsApp";</li>
+                <li><strong>Testar:</strong> extensão Meta Pixel Helper (Chrome) deve acender verde com os eventos certos.</li>
+            </ol>
+            <div class="callout">
+                <span class="callout-icon"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 21c4-3.5 7-7 7-11a7 7 0 1 0-14 0c0 4 3 7.5 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+                <div><p class="callout-title">Evento-chave para negócio local</p><p>Se a conversão acontece no WhatsApp, marque o CLIQUE no link do WhatsApp como evento principal. É esse evento que a campanha de vendas vai otimizar — e cada lead passa a ser contabilizado.</p></div>
+            </div>
+
+            <h2>3. Estrutura profissional de ativos</h2>
+            <table>
+                <tr><th>Ativo</th><th>Função</th><th>Boa prática</th></tr>
+                <tr><td>Business Manager</td><td>Casa-mãe da empresa</td><td>Um por negócio; dados completos no cadastro</td></tr>
+                <tr><td>Conta de anúncios</td><td>Onde roda a verba</td><td>Uma por negócio/marca; cartão do cliente</td></tr>
+                <tr><td>Pixel</td><td>Rastreamento</td><td>Um por domínio/site</td></tr>
+                <tr><td>Página/Perfil</td><td>Presença orgânica</td><td>Vinculados ao mesmo BM</td></tr>
+            </table>
+            <p>Nunca rode campanha do cliente na SUA conta pessoal: verba do cliente em ativo do cliente. Acesso concedido como parceiro, revogável a qualquer momento.</p>
+
+            <h2>4. Públicos que nascem dos eventos</h2>
+            <ul>
+                <li><strong>Visitantes 30 dias</strong> — base de remarketing;</li>
+                <li><strong>Quem clicou no WhatsApp mas não comprou</strong> — público de recuperação;</li>
+                <li><strong>Compradores</strong> — exclusão (não pagar pra quem já comprou) e semente de semelhantes;</li>
+                <li><strong>Público semelhante 1–3%</strong> — a plataforma encontra parecidos com seus melhores clientes;</li>
+                <li><strong>Envolvidos com Instagram/Facebook 90 dias</strong> — quentes para ofertas.</li>
+            </ol>
+            <div class="example-box">
+                <p class="callout-title">Exemplo prático · Estrutura mínima viável</p>
+                <p>Campanha de vendas otimizando evento "clique WhatsApp" + público semelhante 1% + remarketing de visitantes 30 dias. Duas campanhas, pixel instalado, exclusão de compradores. É assim que operação pequena parece grande.</p>
+            </div>
+        </article>
+
+        <article class="content">
+            <div class="exercise">
+                <span class="exercise-label">Exercício prático</span>
+                <h3>Fundação técnica completa</h3>
+                <ol>
+                    <li>Instale um pixel em qualquer página sua (site, landing em construtor) e valide com o Pixel Helper.</li>
+                    <li>Crie o evento de <strong>clique no WhatsApp</strong> e dispare-o manualmente para confirmar registro.</li>
+                    <li>Monte a estrutura: BM → conta de anúncios → pixel → página vinculada.</li>
+                    <li>Crie 3 públicos personalizados: visitantes 30d, engajados IG 90d e compradores (simulado).</li>
+                </ol>
+            </div>
+
+            <h2>Checklist do módulo</h2>
+            <ul class="checklist">
+                <li><label><input type="checkbox" data-item="1"> Explico por que pixel decide otimização e medição</label></li>
+                <li><label><input type="checkbox" data-item="2"> Instalo e valido rastreamento sozinho</label></li>
+                <li><label><input type="checkbox" data-item="3"> Estruturo ativos separando cliente de prestador</label></li>
+                <li><label><input type="checkbox" data-item="4"> Crio públicos personalizados a partir de eventos</label></li>
+            </ul>
+
+            <h2>Materiais complementares</h2>
+            <div class="resources">
+                <a class="resource-item" href="https://www.facebook.com/business/help" target="_blank" rel="noopener"><span>Meta Business Help Center — guia oficial de pixels e eventos</span><em>Documentação</em></a>
+                <div class="resource-item"><span>Extensão Meta Pixel Helper (Chrome Web Store)</span><em>Ferramenta</em></div>
+            </div>
+
+            <nav class="module-nav">
+                <a href="modulo-21.html"><span class="dir">← Anterior</span><span class="title">Módulo 21 · Fundamentos</span></a>
+                <a class="next" href="modulo-23.html"><span class="dir">Próximo →</span><span class="title">Módulo 23 · Criativos que Convertem</span></a>
+            </nav>
+        </article>
+    </div>
+</main>
+
+<script src="../js/main.js"></script>
+<script src="../js/chat.js"></script>
+</body>
+</html>

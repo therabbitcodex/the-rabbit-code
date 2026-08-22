@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 31 — Prompts na Prática · THE RABBIT CODE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Work+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="reading-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#8a6a2c,#c9a55e);z-index:2000;"></div>
+
+<header class="navbar">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo"><span class="logo-badge"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><ellipse cx="25" cy="27" rx="9.5" ry="23" transform="rotate(-12 25 27)" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="41" cy="27" rx="9.5" ry="23" transform="rotate(12 41 27)" fill="none" stroke="currentColor" stroke-width="3"/></svg></span><span class="logo-text">THE RABBIT <b>CODE</b></span></a>
+        <ul class="nav-links">
+            <li><a href="../index.html#curso">O Curso</a></li>
+            <li><a href="../index.html#modulos">Módulos</a></li>
+            <li><a href="../index.html#contato" class="btn btn-primary">Contato</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<main class="module-page">
+    <div class="container">
+
+        <nav class="breadcrumb"><a href="../index.html">Início</a> / Bloco 05 — Inteligência Artificial / <span>Módulo 31</span></nav>
+
+        <div class="module-hero">
+            <span class="kicker">Bloco 05 · Inteligência Artificial</span>
+            <h1>Prompts<br><span class="serif-accent grad-text">na Prática</span></h1>
+            <p class="lead">A qualidade da resposta é proporcional à qualidade da pergunta. Estrutura de prompt profissional, biblioteca de comandos do gestor e iteração que refina resultados.</p>
+            <div class="module-meta">
+                <span>Tempo: <b>~45 min</b></span>
+                <span>Nível: <b>Todos</b></span>
+                <span>Exercício: <b>Sim</b></span>
+            </div>
+        </div>
+
+        <div class="objectives">
+            <h3>Ao final deste módulo você será capaz de</h3>
+            <ul>
+                <li>Escrever prompts com estrutura profissional completa.</li>
+                <li>Usar papéis, contexto, restrições e formatos a seu favor.</li>
+                <li>Iterar respostas até o resultado ficar afiado.</li>
+                <li>Montar sua biblioteca pessoal de prompts reutilizáveis.</li>
+            </ul>
+        </div>
+
+        <article class="content">
+            <h2>1. Anatomia do prompt profissional</h2>
+            <table>
+                <tr><th>Componente</th><th>Pergunta que responde</th><th>Exemplo</th></tr>
+                <tr><td><strong>Papel</strong></td><td>Quem a IA deve ser?</td><td>"Você é copywriter sênior de nicho fitness..."</td></tr>
+                <tr><td><strong>Contexto</strong></td><td>Qual a situação real?</td><td>"Academia de bairro, público 25–40, oferta matrícula zero"</td></tr>
+                <tr><td><strong>Tarefa</strong></td><td>O que produzir?</td><td>"5 ganchos de reel sobre treino de manhã"</td></tr>
+                <tr><td><strong>Restrições</strong></td><td>O que evitar/exigir?</td><td>"Máx. 12 palavras, tom direto, sem clichês de academia"</td></tr>
+                <tr><td><strong>Formato</strong></td><td>Como entregar?</td><td>"Tabela: gancho | emoção | por que funciona"</td></tr>
+            </table>
+            <p>Compare: "me faz legendas pra instagram" (genérico → genérico) vs. a estrutura acima (específico → utilizável).</p>
+
+            <h2>2. Técnicas que elevam o nível</h2>
+            <ul>
+                <li><strong>Few-shot</strong> — mostrar 2–3 exemplos do estilo desejado ("siga este padrão: ...");</li>
+                <li><strong>Cadeia de tarefas</strong> — dividir em etapas: primeiro pesquisa o público, depois cria ângulos, depois escreve;</li>
+                <li><strong>Voz invertida</strong> — pedir que a IA critique o próprio output e liste fraquezas antes da versão final;</li>
+                <li><strong>Persona do cliente</strong> — "responda como um cético de 35 anos que já tentou 3 academias" para testar objeções;</li>
+                <li><strong>Temperatura de criatividade</strong> — "seja conservador/literal" ou "seja provocativo e inesperado" conforme a tarefa.</li>
+            </ul>
+
+            <h2>3. Biblioteca essencial do gestor</h2>
+            <ol>
+                <li><strong>Briefing reverso:</strong> "Faça-me 10 perguntas para você entender meu negócio melhor que eu" — ótimo início de projeto;</li>
+                <li><strong>Analisador de público:</strong> colar descrição do produto + pedir dores, desejos e objeções em tabela;</li>
+                <li><strong>Gerador de ângulos:</strong> produto + 8 frameworks (dor, desejo, prova social, urgência...);</li>
+                <li><strong>Roteirista de reels:</strong> ângulo + formato → roteiro com marcação de tempo;</li>
+                <li><strong>Auditor de copy:</strong> colar anúncio pronto + "liste 5 fraquezas e reescreva";</li>
+                <li><strong>Resumidor de reunião:</strong> transcrição bruta → decisões, pendências e donos;</li>
+                <li><strong>Relatório humano:</strong> dados crus → texto claro para cliente leigo;</li>
+                <li><strong>Sacador de insight:</strong> colar métricas → "o que os números dizem e o que testar?"</li>
+            </ol>
+            <div class="callout">
+                <span class="callout-icon"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 21c4-3.5 7-7 7-11a7 7 0 1 0-14 0c0 4 3 7.5 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+                <div><p class="callout-title">Prompt-mestre de identidade</p><p>Salve um bloco fixo com o negócio: produto, público, diferenciais, tom de voz, palavras proibidas. Cole-o no início de qualquer sessão — contexto estável = respostas consistentes.</p></div>
+            </div>
+
+            <h2>4. Iteração: a conversa importa mais que o comando</h2>
+            <p>Nenhum prompt perfeito resolve numa tacada. O fluxo real: primeira resposta (60% bom) → "versão 2 mantendo X, mudando Y" → "mais curto e direto" → "reescreva o item 3 no tom do exemplo Z". Trate a IA como estagiário talentoso: orienta-se, corrige-se, refina-se.</p>
+            <div class="example-box">
+                <p class="callout-title">Exemplo prático · Prompt completo montado</p>
+                <p>"Você é copywriter sênior especializado em negócios locais. Contexto: padaria artesanal no interior de SP, público famílias 30–50, diferencial fermentação natural de 48h. Tarefa: 7 legendas de Instagram anunciando o pão do dia. Restrições: máx. 80 palavras, abrir com pergunta ou curiosidade, CTA variado entre legendas, proibido usar 'delicioso' e 'imperdível'. Formato: lista numerada com emoji mínimo."</p>
+            </div>
+        </article>
+
+        <article class="content">
+            <div class="exercise">
+                <span class="exercise-label">Exercício prático</span>
+                <h3>Sua biblioteca viva</h3>
+                <ol>
+                    <li>Escreva o <strong>prompt-mestre de identidade</strong> do negócio-fantasma (bloco fixo).</li>
+                    <li>Monte os prompts completos das tarefas 2, 3 e 6 da biblioteca usando a anatomia dos 5 componentes.</li>
+                    <li>Rode cada um num assistente de IA e <strong>itere 2x</strong> documentando as melhorias.</li>
+                    <li>Crie seu documento "Biblioteca de Prompts" com os 3 finais aprovados.</li>
+                </ol>
+            </div>
+
+            <h2>Checklist do módulo</h2>
+            <ul class="checklist">
+                <li><label><input type="checkbox" data-item="1"> Escrevo prompts com papel, contexto, tarefa, restrição e formato</label></li>
+                <li><label><input type="checkbox" data-item="2"> Uso few-shot e cadeia de tarefas quando vale a pena</label></li>
+                <li><label><input type="checkbox" data-item="3"> Itero respostas em vez de aceitar a primeira versão</label></li>
+                <li><label><input type="checkbox" data-item="4"> Tenho biblioteca própria de prompts testados</label></li>
+            </ul>
+
+            <h2>Materiais complementares</h2>
+            <div class="resources">
+                <div class="resource-item"><span>Biblioteca de 30 prompts prontos por função (pasta de materiais)</span><em>PDF</em></div>
+                <div class="resource-item"><span>Documentação oficial de prompting dos principais assistentes (guia de boas práticas)</span><em>Leitura</em></div>
+            </div>
+
+            <nav class="module-nav">
+                <a href="modulo-30.html"><span class="dir">← Anterior</span><span class="title">Módulo 30 · IA no Marketing</span></a>
+                <a class="next" href="modulo-32.html"><span class="dir">Próximo →</span><span class="title">Módulo 32 · Mercado e Posicionamento</span></a>
+            </nav>
+        </article>
+    </div>
+</main>
+
+<script src="../js/main.js"></script>
+<script src="../js/chat.js"></script>
+</body>
+</html>

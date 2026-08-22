@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 21 — Fundamentos de Tráfego Pago · THE RABBIT CODE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Work+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="reading-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#8a6a2c,#c9a55e);z-index:2000;"></div>
+
+<header class="navbar">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo"><span class="logo-badge"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><ellipse cx="25" cy="27" rx="9.5" ry="23" transform="rotate(-12 25 27)" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="41" cy="27" rx="9.5" ry="23" transform="rotate(12 41 27)" fill="none" stroke="currentColor" stroke-width="3"/></svg></span><span class="logo-text">THE RABBIT <b>CODE</b></span></a>
+        <ul class="nav-links">
+            <li><a href="../index.html#curso">O Curso</a></li>
+            <li><a href="../index.html#modulos">Módulos</a></li>
+            <li><a href="../index.html#contato" class="btn btn-primary">Contato</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<main class="module-page">
+    <div class="container">
+
+        <nav class="breadcrumb"><a href="../index.html">Início</a> / Bloco 04 — Tráfego Pago / <span>Módulo 21</span></nav>
+
+        <div class="module-hero">
+            <span class="kicker">Bloco 04 · Tráfego Pago</span>
+            <h1>Fundamentos<br><span class="serif-accent grad-text">de Tráfego Pago</span></h1>
+            <p class="lead">Anúncio não é aposta — é investimento com matemática. Antes de clicar em "criar campanha", você precisa dominar o vocabulário, a lógica dos leilões e a conta que decide tudo.</p>
+            <div class="module-meta">
+                <span>Tempo: <b>~50 min</b></span>
+                <span>Nível: <b>Intermediário</b></span>
+                <span>Exercício: <b>Sim</b></span>
+            </div>
+        </div>
+
+        <div class="objectives">
+            <h3>Ao final deste módulo você será capaz de</h3>
+            <ul>
+                <li>Explicar como funciona um leilão de anúncios.</li>
+                <li>Dominar as métricas-base: CPM, CPC, CTR e CPA.</li>
+                <li>Diferenciar os objetivos de campanha das plataformas.</li>
+                <li>Calcular viabilidade de uma campanha antes de investir.</li>
+            </ul>
+        </div>
+
+        <article class="content">
+            <h2>1. O que é (e o que não é) tráfego pago</h2>
+            <p>Tráfego pago é comprar atenção qualificada de forma escalável e mensurável. Ele <strong>não conserta oferta ruim nem página fraca</strong> — só entrega visitantes. Anúncio amplifica: se o funil converte, escala lucro; se não converte, escala prejuízo.</p>
+            <p>Daí a ordem correta do curso: oferta e copy (módulos 05 e 11) vieram antes da mídia. Quem anuncia produto sem validação paga para descobrir o que o mercado já rejeitaria de graça.</p>
+
+            <h2>2. Como funciona o leilão</h2>
+            <p>Nas plataformas (Meta, Google, TikTok), cada impressão é disputada num leilão automático que considera:</p>
+            <ul>
+                <li><strong>Lance</strong> — quanto você paga por resultado;</li>
+                <li><strong>Taxa de ação estimada</strong> — probabilidade do usuário agir com seu anúncio;</li>
+                <li><strong>Qualidade/relevância</strong> — anúncio útil ao usuário ganha desconto.</li>
+            </ul>
+            <p>Consequência prática: criativo bom + público certo = você paga MENOS que concorrentes com criativo fraco. Relevância é desconto real.</p>
+
+            <h2>3. As métricas-base</h2>
+            <table>
+                <tr><th>Métrica</th><th>O que mede</th><th>Sinal de alerta</th></tr>
+                <tr><td><strong>CPM</strong></td><td>Custo por mil impressões</td><td>Alto demais = público caro ou criativo ruim</td></tr>
+                <tr><td><strong>CTR</strong></td><td>% de cliques por impressão</td><td>Baixo = criativo não atrai clique</td></tr>
+                <tr><td><strong>CPC</strong></td><td>Custo por clique</td><td>Alto + CTR baixo = problema no criativo</td></tr>
+                <tr><td><strong>CPA/CPL</strong></td><td>Custo por venda/lead</td><td>Acima da margem = campanha inviável</td></tr>
+            </table>
+            <p>Diagnóstico em cadeia: sem impressão → orçamento/público; impressão sem clique → criativo; cliques sem conversão → página/oferta. Cada número aponta o culpado.</p>
+
+            <h2>4. Objetivos de campanha</h2>
+            <p>A plataforma otimiza PARA o objetivo escolhido — pedir errado é receber errado:</p>
+            <table>
+                <tr><th>Objetivo</th><th>Recebe</th><th>Quando usar</th></tr>
+                <tr><td>Reconhecimento</td><td>Impressões baratas</td><td>Marcas novas, grande verba</td></tr>
+                <tr><td>Tráfego</td><td>Cliques/visitas</td><td>Raramente — gera visitante, não cliente</td></tr>
+                <tr><td>Engajamento</td><td>Curtidas/mensagens</td><td>Esquentar públicos sociais</td></tr>
+                <tr><td>Leads</td><td>Formulários/contatos</td><td>Captura para follow-up</td></tr>
+                <tr><td>Vendas/Conversões</td><td>Pedidos/agendamentos</td><td>O objetivo padrão do gestor profissional</td></tr>
+            </table>
+            <div class="callout">
+                <span class="callout-icon"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 21c4-3.5 7-7 7-11a7 7 0 1 0-14 0c0 4 3 7.5 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+                <div><p class="callout-title">Erro clássico</p><p>Anunciar com objetivo "tráfego" esperando vendas. A máquina entregará pessoas que clicam em qualquer coisa — barato e inútil. Se quer venda, peça venda.</p></div>
+            </div>
+
+            <h2>5. A conta que decide tudo</h2>
+            <p>Antes de qualquer verba, calcule a viabilidade:</p>
+            <ol>
+                <li><strong>Lucro por venda</strong> = preço − custos diretos;</li>
+                <li><strong>CPA máximo</strong> = quanto pode gastar por venda e ainda lucrar;</li>
+                <li><strong>Teste de sanidade</strong> — CPA máximo ÷ taxa de conversão estimada (1–3%) = CPC máximo aceitável.</li>
+            </ol>
+            <div class="example-box">
+                <p class="callout-title">Exemplo prático · Plano de saúde animal</p>
+                <p>Plano a R$ 89/mês com retenção média de 18 meses → LTV R$ 1.602. Margem 40% → lucro R$ 641 por cliente. CPA máximo seguro: até R$ 200. Se a campanha trouxer matrícula a R$ 120, sobra R$ 80 de lucro por cliente + receita recorrente. Viável.</p>
+            </div>
+        </article>
+
+        <article class="content">
+            <div class="exercise">
+                <span class="exercise-label">Exercício prático</span>
+                <h3>Viabilidade antes da verba</h3>
+                <ol>
+                    <li>Calcule para o negócio-fantasma: <strong>lucro por venda, CPA máximo e CPC máximo</strong>.</li>
+                    <li>Escolha o objetivo de campanha adequado e justifique por escrito.</li>
+                    <li>Interprete este cenário: CPM R$ 22, CTR 0,4%, CPC R$ 5,50, nenhuma venda — <strong>onde está o problema e o que muda primeiro?</strong></li>
+                    <li>Repita o cálculo de viabilidade para um serviço real seu.</li>
+                </ol>
+            </div>
+
+            <h2>Checklist do módulo</h2>
+            <ul class="checklist">
+                <li><label><input type="checkbox" data-item="1"> Explico o leilão e por que relevância barateia mídia</label></li>
+                <li><label><input type="checkbox" data-item="2"> Calculo CPM, CPC, CTR e interpreto cada sinal</label></li>
+                <li><label><input type="checkbox" data-item="3"> Escolho objetivo de campanha corretamente</label></li>
+                <li><label><input type="checkbox" data-item="4"> Valido viabilidade ANTES de investir</label></li>
+            </ul>
+
+            <h2>Materiais complementares</h2>
+            <div class="resources">
+                <div class="resource-item"><span>Planilha calculadora de viabilidade: LTV, CPA máx., CPC máx. (pasta de materiais)</span><em>Planilha</em></div>
+                <div class="resource-item"><span>Glossário oficial de métricas do Meta Business Help Center</span><em>Documentação</em></div>
+            </div>
+
+            <nav class="module-nav">
+                <a href="modulo-20.html"><span class="dir">← Anterior</span><span class="title">Módulo 20 · Comunidade e Atendimento</span></a>
+                <a class="next" href="modulo-22.html"><span class="dir">Próximo →</span><span class="title">Módulo 22 · Pixel e Estrutura de Conta</span></a>
+            </nav>
+        </article>
+    </div>
+</main>
+
+<script src="../js/main.js"></script>
+<script src="../js/chat.js"></script>
+</body>
+</html>
