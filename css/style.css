@@ -722,7 +722,14 @@ section { position: relative; }
     font-style: italic;
     font-size: clamp(1.05rem, 2vw, 1.35rem);
     color: rgba(253, 251, 246, .92);
-    max-width: 520px;
+}
+.bloco-header {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(.35) saturate(.85) contrast(1.02);
+    mix-blend-mode: multiply;
+    margin-bottom: 2rem;
 }
 .signature .sig-rule {
     width: 90px;
