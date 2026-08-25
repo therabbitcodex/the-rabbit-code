@@ -1,5 +1,5 @@
 // TUTOR DO COELHO — assistente IA do The Rabbit Code
-// Usa Puter.js (IA gratuita, sem chave de API)
+// Usa Pollinations.ai (gratuito, sem chave e sem login)
 
 (function () {
     const PANEL_HTML = `
@@ -22,25 +22,20 @@
     function getContext() {
         const main = document.querySelector('.content') || document.querySelector('main');
         let text = main ? main.innerText : '';
-        return text.replace(/\s+/g, ' ').slice(0, 6000);
+        return text.replace(/\s+/g, ' ').slice(0, 2800);
     }
 
     const SYSTEM_PROMPT =
         'Você é o "Tutor do Coelho", assistente do curso THE RABBIT CODE, uma formação em marketing digital, social media e tráfego pago criada por Vinicius Coelho. ' +
-        'Responda SEMPRE em português do Brasil, de forma clara, amigável e prática, como um mentor paciente. ' +
+        'Responda SEMPRE em português do Brasil, de forma clara, amigável e prática, como um mentor paciente, em no máximo 120 palavras. ' +
         'Baseie-se principalmente no conteúdo da página atual (fornecido abaixo). Se a pergunta fugir do conteúdo, responda com conhecimento geral de marketing, mas curto. ' +
         'Nunca invente dados do curso.\n\nCONTEÚDO DA PÁGINA ATUAL:\n';
+
+    const history = [];
 
     let open = false;
 
     function init() {
-        // Só carrega a IA quando servido por http/https (Puter não aceita file://)
-        if (location.protocol === 'http:' || location.protocol === 'https:') {
-            const s = document.createElement('script');
-            s.src = 'https://js.puter.com/v2/';
-            document.head.appendChild(s);
-        }
-
         // Botão flutuante
         const fab = document.createElement('button');
         fab.className = 'chat-fab';
@@ -92,20 +87,23 @@
         scrollBottom();
 
         try {
-            if (typeof puter === 'undefined' || !puter.ai) throw new Error('offline');
-            const resp = await puter.ai.chat(SYSTEM_PROMPT + getContext(), [
-                { role: 'user', content: question }
-            ]);
-            const answer = typeof resp === 'string'
-                ? resp
-                : (resp.message && resp.message.content) || (resp.text) || 'Não consegui responder agora.';
-            typing.innerHTML = formatAnswer(String(answer));
+            const convo = history.slice(-4)
+                .map(m => m.role === 'user' ? ('Aluno: ' + m.text) : ('Tutor: ' + m.text))
+                .join('\n');
+            const prompt = SYSTEM_PROMPT + getContext()
+                + (convo ? '\n\nCONVERSA ANTERIOR:\n' + convo + '\n' : '')
+                + '\n\nPERGUNTA DO ALUNO: ' + question;
+            const url = 'https://text.pollinations.ai/' + encodeURIComponent(prompt)
+                + '?model=openai&referrer=' + encodeURIComponent(location.hostname || 'therabbitcode');
+            const resp = await fetch(url);
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            const answer = await resp.text();
+            if (!answer || answer.length < 2) throw new Error('vazio');
+            history.push({ role: 'user', text: question });
+            history.push({ role: 'bot', text: answer });
+            typing.innerHTML = formatAnswer(answer);
         } catch (err) {
-            if (location.protocol === 'file:') {
-                typing.innerHTML = 'O tutor IA precisa do site rodando em um servidor (local ou online). Abra pelo endereço <strong>http://localhost:8000</strong> ou publique o site. 🐇';
-            } else {
-                typing.innerHTML = 'Não consegui falar com a IA agora 😔 Verifique sua conexão e tente de novo em instantes.';
-            }
+            typing.innerHTML = 'Não consegui falar com a IA agora 😔 Verifique sua conexão e tente de novo em instantes.';
         }
         scrollBottom();
     }
