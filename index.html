@@ -243,7 +243,7 @@
 
 <!-- FECHAMENTO -->
 <div class="page-end">
-    <img src="img/final-curso.png" alt="Finalização do curso — The Rabbit Code" onerror="this.onerror=null;this.src='img/final-pagina.png'">
+    <img src="img/final da pagina.png" alt="Finalização do curso — The Rabbit Code" onerror="this.onerror=null;this.src='img/final-pagina.png'">
     <div class="signature">
         <span class="sig-ears"><svg viewBox="0 0 64 64" width="26" height="26" aria-hidden="true"><ellipse cx="25" cy="27" rx="9.5" ry="23" transform="rotate(-12 25 27)" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="41" cy="27" rx="9.5" ry="23" transform="rotate(12 41 27)" fill="none" stroke="currentColor" stroke-width="3"/></svg></span>
         <h3>The Rabbit Code</h3>
@@ -279,12 +279,35 @@
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+<div class="footer-bottom">
             <span>© 2026 THE RABBIT CODE · Vinicius Coelho. Todos os direitos reservados.</span>
             <span>Feito com estratégia, arte e código.</span>
+            <button onclick="mostrarConclusao()" style="margin-left:1rem; padding:0.5rem 1rem; background:var(--gold-light); color:#192111; border:none; border-radius:4px; cursor:pointer;">Concluir Curso</button>
         </div>
-    </div>
 </footer>
+
+<script>
+    // Modal de conclusão do curso
+    const modal = document.createElement('div');
+    modal.innerHTML = `
+        <div style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); display:none; justify-content:center; align-items:center; z-index:9999;">
+            <div style="background:white; padding:2rem; border-radius:8px; text-align:center; max-width:600px;">
+                <img src="img/finalizacao-do-curso.png" alt="Conclusão do Curso" style="width:150px; margin-bottom:1rem;">
+                <h2>Parabéns, Vinicius! 🎉</h2>
+                <p>Você concluiu com sucesso o <strong>THE RABBIT CODE</strong>.</p>
+                <p class="frase" style="margin:1rem 0;">"O futuro pertence a quem tem coragem de aprender continuamente."</p>
+                <button style="margin-top:1rem; padding:0.5rem 1rem; background:var(--gold-light); color:#192111; border:none; border-radius:4px; cursor:pointer" onclick="this.parentElement.parentElement.style.display='none'">Fechar</button>
+            </div>
+        </div>
+    ;
+    document.body.appendChild(modal);
+
+    function mostrarConclusao() {
+        modal.style.display = 'flex';
+        // Marca como concluído no localStorage
+        localStorage.setItem('cursoFinalizado', 'true');
+    }
+</script>
 
 <script src="js/main.js"></script>
 <script src="js/chat.js"></script>
