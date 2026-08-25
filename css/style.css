@@ -742,7 +742,7 @@ footer {
 .module-page {
     position: relative;
     z-index: 1;
-    background: var(--bg-1);
+    background: var(--bg);
     border-radius: 26px 26px 0 0;
     margin-top: -44px;
     box-shadow: 0 -16px 38px rgba(33, 26, 17, .14);
