@@ -724,11 +724,10 @@ section { position: relative; }
     color: rgba(253, 251, 246, .92);
 }
 .bloco-header {
-    height: 220px;
+    height: clamp(360px, 62vh, 640px);
     background-size: cover;
     background-position: center;
-    filter: sepia(.35) saturate(.85) contrast(1.02);
-    mix-blend-mode: multiply;
+    filter: sepia(.18) saturate(.98) contrast(1.01);
     margin-bottom: 2rem;
 }
 .signature .sig-rule {
