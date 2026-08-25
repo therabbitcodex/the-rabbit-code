@@ -71,37 +71,37 @@
             <p>Seis trilhas que se conectam: você entende o porquê do marketing, aprende a executar cada canal e sai sabendo cobrar pelo serviço.</p>
         </div>
         <div class="blocks-grid">
-            <div class="block-card bc-1 reveal">
+            <div class="block-card bc-1 reveal" onclick="location.href='bloco-1.html'" style="cursor:pointer;">
                 <div class="block-num">BLOCO 01</div>
                 <h3>Fundamentos de Marketing</h3>
                 <p>A base que separa amador de profissional: comportamento do consumidor, gatilhos mentais, storytelling, personas e branding.</p>
                 <div class="block-tags"><span class="tag">Gatilhos Mentais</span><span class="tag">Storytelling</span><span class="tag">Branding</span></div>
             </div>
-            <div class="block-card bc-2 reveal">
+            <div class="block-card bc-2 reveal" onclick="location.href='bloco-2.html'" style="cursor:pointer;">
                 <div class="block-num">BLOCO 02</div>
                 <h3>Marketing Digital</h3>
                 <p>Landing pages e UX, SEO, newsletter, copywriting, omnichannel, trade marketing e análise de métricas com Google Analytics.</p>
                 <div class="block-tags"><span class="tag">SEO</span><span class="tag">UX</span><span class="tag">Analytics</span><span class="tag">Newsletter</span></div>
             </div>
-            <div class="block-card bc-3 reveal">
+            <div class="block-card bc-3 reveal" onclick="location.href='bloco-3.html'" style="cursor:pointer;">
                 <div class="block-num">BLOCO 03</div>
                 <h3>Social Media</h3>
                 <p>Planejamento, Instagram, TikTok, produção de conteúdo no celular e domínio total da interface do Meta Business Suite.</p>
                 <div class="block-tags"><span class="tag">Instagram</span><span class="tag">TikTok</span><span class="tag">Meta Business Suite</span></div>
             </div>
-            <div class="block-card bc-4 reveal">
+            <div class="block-card bc-4 reveal" onclick="location.href='bloco-4.html'" style="cursor:pointer;">
                 <div class="block-num">BLOCO 04</div>
                 <h3>Tráfego Pago</h3>
                 <p>Passo a passo dentro das interfaces: Meta Ads, Google Search, Display, YouTube, Performance Max, remarketing e escala.</p>
                 <div class="block-tags"><span class="tag">Meta Ads</span><span class="tag">Google Search</span><span class="tag">Remarketing</span></div>
             </div>
-            <div class="block-card bc-5 reveal">
+            <div class="block-card bc-5 reveal" onclick="location.href='bloco-5.html'" style="cursor:pointer;">
                 <div class="block-num">BLOCO 05</div>
                 <h3>Inteligência Artificial</h3>
                 <p>IA aplicada ao marketing real: prompts para conteúdo, geração de imagens, automações e produtividade de gestor.</p>
                 <div class="block-tags"><span class="tag">ChatGPT</span><span class="tag">Imagens IA</span><span class="tag">Automação</span></div>
             </div>
-            <div class="block-card bc-6 reveal">
+            <div class="block-card bc-6 reveal" onclick="location.href='bloco-6.html'" style="cursor:pointer;">
                 <div class="block-num">BLOCO 06</div>
                 <h3>Profissão &amp; Carreira</h3>
                 <p>Precificação, contratos, relatórios para clientes, portfólio do zero e projeto final com plano completo de marketing.</p>
@@ -287,28 +287,22 @@
 </footer>
 
 <script>
-    // Modal de conclusão do curso - versão única e simplificada
-    window.mostrarConclusao = function() {
-        // Verificar se já foi concluído
-        if (localStorage.getItem('cursoFinalizado') === 'true') {
-            return;
-        }
-        const modal = document.createElement('div');
-        modal.innerHTML = `
-            <div style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center; z-index:9999;">
-                <div style="background:white; padding:2rem; border-radius:8px; text-align:center; max-width:600px;">
-                    <img src="img/finalizacao-do-curso.png" alt="Conclusão do Curso" style="width:150px; margin-bottom:1rem;">
-                    <h2>Parabéns, Vinicius! 🎉</h2>
-                    <p>Você concluiu com sucesso o THE RABBIT CODE.</p>
-                    <p class="frase" style="margin:1rem 0;">"O futuro pertence a quem tem coragem de aprender continuamente."</p>
-                    <button style="margin-top:1rem; padding:0.5rem 1rem; background:var(--gold-light); color:#192111; border:none; border-radius:4px; cursor:pointer" onclick="this.parentElement.parentElement.parentElement.style.display='none'">Fechar</button>
-                </div>
-            </div>
-        </div>
-        ;
-        document.body.appendChild(modal);
-        modal.style.display = 'flex';
-        localStorage.setItem('cursoFinalizado', 'true');
+    function mostrarConclusao() {
+        var overlay = document.createElement('div');
+        overlay.setAttribute('style', 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(33,26,17,.88);display:flex;justify-content:center;align-items:center;z-index:9999;');
+        var box = document.createElement('div');
+        box.setAttribute('style', 'background:#fdfbf6;padding:40px 34px;border-radius:16px;text-align:center;max-width:520px;margin:20px;border:1px solid rgba(168,130,60,.45);box-shadow:0 30px 80px rgba(33,26,17,.35);');
+        box.innerHTML = '<img src="img/finalizacao-do-curso.png" alt="Conclusão do curso" style="width:170px;max-width:75%;border-radius:12px;margin-bottom:18px;">'
+            + '<h2 style="font-size:1.7rem;margin-bottom:10px;color:#211a11;">Parabéns! &#127881;</h2>'
+            + '<p style="margin-bottom:6px;color:#211a11;">Você concluiu o <b>THE RABBIT CODE</b>.</p>'
+            + '<p style="font-style:italic;color:#8a6a2c;font-size:1.05rem;">&quot;O futuro pertence a quem tem coragem de aprender continuamente.&quot;</p>'
+            + '<button id="fechar-conclusao" style="margin-top:22px;padding:10px 28px;background:#a8823c;color:#fff;border:none;border-radius:30px;cursor:pointer;font-weight:600;font-size:.95rem;">Voltar ao início</button>';
+        overlay.appendChild(box);
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay || e.target.id === 'fechar-conclusao') { overlay.remove(); }
+        });
+        try { localStorage.setItem('cursoFinalizado', 'true'); } catch(err) {}
     }
 </script>
 
