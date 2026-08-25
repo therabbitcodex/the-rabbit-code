@@ -725,12 +725,23 @@ section { position: relative; }
 }
 /* ---------- Hero parallax dos blocos ---------- */
 .bloco-hero {
-    height: min(76vh, 720px);
+    position: relative;
+    clip-path: inset(0);
+    height: min(78vh, 740px);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--bg-2);
     background-attachment: fixed;
+}
+.bloco-hero::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, var(--bg-2) 0%, rgba(241,235,224,0) 28%, rgba(241,235,224,0) 72%, var(--bg-2) 100%),
+        linear-gradient(90deg, var(--bg-2) 0%, rgba(241,235,224,0) 10%, rgba(241,235,224,0) 90%, var(--bg-2) 100%);
 }
 .module-page {
     position: relative;
