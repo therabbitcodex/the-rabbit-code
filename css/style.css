@@ -723,12 +723,22 @@ section { position: relative; }
     font-size: clamp(1.05rem, 2vw, 1.35rem);
     color: rgba(253, 251, 246, .92);
 }
-.bloco-header-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: 2rem;
-    filter: sepia(.15) saturate(1) contrast(1.01);
+/* ---------- Hero parallax dos blocos ---------- */
+.bloco-hero {
+    height: min(76vh, 720px);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--bg-2);
+    background-attachment: fixed;
+}
+.module-page {
+    position: relative;
+    z-index: 1;
+    background: var(--bg-1);
+    border-radius: 26px 26px 0 0;
+    margin-top: -44px;
+    box-shadow: 0 -16px 38px rgba(33, 26, 17, .14);
 }
 .signature .sig-rule {
     width: 90px;
