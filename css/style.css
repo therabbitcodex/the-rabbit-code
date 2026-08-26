@@ -1244,8 +1244,19 @@ td {
 }
 
 @media (max-width: 760px) {
-    .section { padding: 80px 0; }
-    .hero-frame, .hero-watermark, .hero-photo { display: none; }
+    .section { padding: 60px 0 40px; }
+    .hero-frame { display: block; inset: 12px; border-width: 1px; }
+    .hero-watermark {
+        font-size: clamp(4rem, 10vw, 14rem);
+        bottom: -2%;
+        right: -4%;
+    }
+    .hero-photo {
+        width: min(65vw, 500px);
+        top: 2%;
+        right: -8%;
+        opacity: .85;
+    }
     .nav-links {
         position: fixed;
         inset: 0;
