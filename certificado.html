@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado · THE RABBIT CODE</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Work+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .cert-stage { padding: 40px 0 80px; }
+        .cert-frame {
+            position: relative;
+            background:
+                radial-gradient(120% 90% at 50% 0%, #fdfbf6 0%, var(--bg) 55%, var(--bg-2) 100%);
+            border: 2px solid rgba(168,130,60,.65);
+            outline: 1px solid rgba(168,130,60,.35);
+            outline-offset: -10px;
+            border-radius: 18px;
+            padding: clamp(34px, 6vw, 72px);
+            text-align: center;
+            box-shadow: 0 30px 70px rgba(33,26,17,.16);
+            overflow: hidden;
+        }
+        .cert-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 12% 18%, rgba(201,165,94,.14), transparent 42%),
+                radial-gradient(circle at 88% 82%, rgba(201,165,94,.12), transparent 40%);
+            pointer-events: none;
+        }
+        .cert-watermark {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: .05;
+            pointer-events: none;
+        }
+        .cert-kicker {
+            font-family: 'Perandory Semi', var(--font-display);
+            letter-spacing: .34em;
+            text-transform: uppercase;
+            font-size: .8rem;
+            color: var(--gold-deep);
+        }
+        .cert-title {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            margin: 10px 0 26px;
+            color: #4a3826;
+        }
+        .cert-name {
+            font-family: 'Fraunces', var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.7rem, 5vw, 3.1rem);
+            line-height: 1.15;
+            margin: 6px auto 18px;
+            max-width: 720px;
+        }
+        .cert-line { width: 120px; height: 1px; margin: 0 auto 22px;
+            background: linear-gradient(90deg, transparent, var(--gold-light), transparent); }
+        .cert-text { max-width: 620px; margin: 0 auto 8px; color: var(--text-1); font-size: .98rem; line-height: 1.75; }
+        .cert-meta {
+            display: flex;
+            gap: 28px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 26px;
+            font-family: var(--font-mono);
+            font-size: .74rem;
+            letter-spacing: .08em;
+            color: #6b5636;
+        }
+        .cert-signs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(24px, 8vw, 110px);
+            max-width: 640px;
+            margin: 44px auto 0;
+        }
+        .cert-sign { border-top: 1px solid rgba(74,56,38,.45); padding-top: 10px; font-size: .85rem; color: #4a3826; }
+        .cert-sign small { display: block; color: #8a7a5e; font-family: var(--font-mono); font-size: .66rem; letter-spacing: .08em; margin-top: 2px; }
+        .cert-actions { display: flex; gap: 14px; justify-content: center; margin-top: 34px; flex-wrap: wrap; }
+        .cert-lock {
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            max-width: 520px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .cert-nameform input {
+            width: min(420px, 100%);
+            padding: 13px 16px;
+            border-radius: 10px;
+            border: 1px solid var(--border-strong);
+            background: #fff;
+            font: inherit;
+            margin: 8px 0 4px;
+        }
+        @media print {
+            @page { size: A4 landscape; margin: 8mm; }
+            .navbar, footer, .chat-fab, .chat-panel, .no-print, .account-wrap, #reading-progress { display: none !important; }
+            body { background: #fff !important; }
+            .module-page { background: none !important; box-shadow: none !important; margin-top: 0 !important; }
+            .cert-stage { padding: 0 !important; }
+            .cert-frame { box-shadow: none !important; border-radius: 8px; }
+            .cert-actions { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="reading-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#8a6a2c,#c9a55e);z-index:2000;"></div>
+
+<header class="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="logo"><span class="logo-badge"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true"><ellipse cx="25" cy="27" rx="9.5" ry="23" transform="rotate(-12 25 27)" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="41" cy="27" rx="9.5" ry="23" transform="rotate(12 41 27)" fill="none" stroke="currentColor" stroke-width="3"/></svg></span><span class="logo-text">THE RABBIT <b>CODE</b></span></a>
+        <ul class="nav-links">
+            <li><a href="index.html#curso">O Curso</a></li>
+            <li><a href="index.html#modulos">Módulos</a></li>
+            <li><a href="index.html#contato" class="btn btn-primary">Contato</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<main class="module-page">
+    <div class="container cert-stage">
+
+        <div id="certLock" class="cert-lock no-print" hidden>
+            <h3 style="margin-bottom:8px;">Certificado ainda bloqueado 🔒</h3>
+            <p style="color:var(--text-2);margin-bottom:16px;">Conclua a trilha até o <strong>Módulo 34</strong> e toque em <strong>“Finalizar curso”</strong> na tela de conclusão para liberar a emissão.</p>
+            <a class="btn btn-primary" href="modulos/modulo-34.html">Ir ao Módulo 34 →</a>
+        </div>
+
+        <div id="certNameForm" class="cert-lock cert-nameform no-print" hidden>
+            <h3 style="margin-bottom:6px;">Falta um detalhe ✍️</h3>
+            <p style="color:var(--text-2);margin-bottom:4px;">Como deve aparecer seu nome no certificado?</p>
+            <input id="certFullName" type="text" maxlength="80" placeholder="Nome completo">
+            <div style="margin-top:14px;"><button id="certSaveName" class="btn btn-primary">Emitir certificado</button></div>
+        </div>
+
+        <article id="certFrame" class="cert-frame" hidden>
+            <div class="cert-watermark"><svg viewBox="0 0 64 64" width="340" height="340"><ellipse cx="25" cy="27" rx="9.5" ry="23" transform="rotate(-12 25 27)" fill="none" stroke="#211a11" stroke-width="2"/><ellipse cx="41" cy="27" rx="9.5" ry="23" transform="rotate(12 41 27)" fill="none" stroke="#211a11" stroke-width="2"/></svg></div>
+
+            <span class="sig-ears" style="display:inline-block;color:var(--gold-light);margin-bottom:6px;">
+                <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><ellipse cx="25" cy="27" rx="9.5" ry="23" transform="rotate(-12 25 27)" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="41" cy="27" rx="9.5" ry="23" transform="rotate(12 41 27)" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+            </span>
+            <div class="cert-kicker">The Rabbit Code</div>
+            <div class="cert-title">Certificado de Conclusão</div>
+
+            <p class="cert-text">Certificamos que</p>
+            <h1 class="cert-name grad-text" id="certStudent">—</h1>
+            <div class="cert-line"></div>
+            <p class="cert-text">concluiu com êxito a formação <strong>THE RABBIT CODE</strong> — 6 trilhas e 34 módulos de marketing, comportamento do consumidor, social media, tráfego pago, inteligência artificial e carreira — desenvolvendo na prática planejamento, execução e apresentação de um plano completo de marketing.</p>
+
+            <div class="cert-meta">
+                <span id="certDate">—</span>
+                <span>Carga: 60 horas · Curso livre</span>
+                <span>Código: <b id="certCode">—</b></span>
+            </div>
+
+            <div class="cert-signs">
+                <div class="cert-sign" id="certSignAluno">Aluno<small>CONCLUINTE</small></div>
+                <div class="cert-sign">Vinicius Coelho<small>CRIADOR DO THE RABBIT CODE</small></div>
+            </div>
+        </article>
+
+        <div class="cert-actions no-print" id="certActions" hidden>
+            <button class="btn btn-primary" onclick="window.print()">🖨️ Salvar em PDF / Imprimir</button>
+            <a class="btn btn-ghost" href="index.html">Voltar ao início</a>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <div class="footer-bottom">
+        <span>© 2026 THE RABBIT CODE · Vinicius Coelho. Todos os direitos reservados.</span>
+        <span>Feito com estratégia, arte e código.</span>
+    </div>
+</footer>
+
+<script src="js/account.js"></script>
+<script src="js/main.js"></script>
+<script src="js/chat.js"></script>
+<script>
+(function () {
+    function code(name, date) {
+        var str = (name + '|' + date).toUpperCase();
+        var h = 5381;
+        for (var i = 0; i < str.length; i++) { h = ((h << 5) + h + str.charCodeAt(i)) >>> 0; }
+        return ('TRC-' + h.toString(36).toUpperCase().slice(0, 6).padEnd(6, 'X'));
+    }
+
+    function showCertificate(name) {
+        var hoje = new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+        document.getElementById('certStudent').textContent = name;
+        document.getElementById('certSignAluno').innerHTML = esc(name) + '<small>CONCLUINTE</small>';
+        document.getElementById('certDate').textContent = 'Emitido em ' + hoje;
+        document.getElementById('certCode').textContent = code(name, hoje);
+        document.getElementById('certFrame').hidden = false;
+        document.getElementById('certActions').hidden = false;
+    }
+
+    function esc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function init() {
+        var finished = localStorage.getItem('cursoFinalizado') === 'true';
+        var user = window.TRCUser && window.TRCUser.get();
+
+        if (!finished) {
+            document.getElementById('certLock').hidden = false;
+            return;
+        }
+
+        if (user && user.name) {
+            showCertificate(user.name);
+            return;
+        }
+
+        document.getElementById('certNameForm').hidden = false;
+        var input = document.getElementById('certFullName');
+        document.getElementById('certSaveName').addEventListener('click', function () {
+            var name = input.value.trim();
+            if (name.length < 3) { input.classList.add('err'); return; }
+            if (window.TRCUser) window.TRCUser.set({ name: name, email: '', since: new Date().toISOString().slice(0, 10) });
+            document.getElementById('certNameForm').hidden = true;
+            showCertificate(name);
+        });
+        input.addEventListener('keydown', function (e) { if (e.key === 'Enter') document.getElementById('certSaveName').click(); });
+        input.focus();
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+})();
+</script>
+</body>
+</html>
